@@ -1,73 +1,8 @@
-<!-- CODE FOR THE FIRST SLIDER -->
-<style>
-  .slider-container1 {
-    width: 100%;
-    max-width: 800px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .slider1 {
-    display: flex;
-    transition: transform 0.4s ease;
-  }
-
-  .slide1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 100%;
-  }
-
-  .slide1 img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-
-  .slider-controls1 {
-    position: absolute;
-    top: 50%;
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-
-  .btn1 {
-    cursor: pointer;
-    line-height: 1;
-    font-size: 18px;
-    font-size: 24px;
-    border: none;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ff8a00;
-    background-color: rgba(30, 38, 53, 0.6);
-    padding: 10px;
-    border-radius: 50%;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .btn1:hover,
-  .btn1:focus {
-    background-color: rgba(30, 38, 53, 0.4);
-    color: #d27204;
-  }
-
-  .prev-btn1 {
-    position: absolute;
-    left: 20px;
-    transform: translateY(-50%);
-  }
-
-  .next-btn1 {
-    position: absolute;
-    right: 20px;
-    transform: translateY(-50%);
-  }
-</style>
-
+<!-- ============= CODE FOR THE FIRST CAROUSEL ============= -->
+<link
+  rel="stylesheet"
+  href="https://codefinity-content-media-v2.s3.eu-west-1.amazonaws.com/courses/c1087363-9025-4c37-8d5e-983a32a007e9/image-tools-section/two-images-carousels-1.css"
+/>
 <div class="slider-container1">
   <div class="slider1">
     <div class="slide1">
@@ -95,101 +30,13 @@
     <button class="btn1 next-btn1" onclick="moveToNextSlide1()">&#8594;</button>
   </div>
 </div>
+<script src="https://codefinity-content-media-v2.s3.eu-west-1.amazonaws.com/courses/c1087363-9025-4c37-8d5e-983a32a007e9/image-tools-section/two-images-carousels-1.js"></script>
 
-<script>
-  let currentSlide1 = 0;
-
-  let moveToPrevSlide1 = () => {
-    const slider = document.querySelector(".slider1");
-    currentSlide1 =
-      (currentSlide1 - 1 + slider.children.length) % slider.children.length;
-    updateSliderPosition1();
-  };
-
-  let moveToNextSlide1 = () => {
-    const slider = document.querySelector(".slider1");
-    currentSlide1 = (currentSlide1 + 1) % slider.children.length;
-    updateSliderPosition1();
-  };
-
-  function updateSliderPosition1() {
-    const slider = document.querySelector(".slider1");
-    const slideWidth = slider.children[0].clientWidth;
-    const translateXValue = -currentSlide1 * slideWidth;
-    slider.style.transform = `translateX(${translateXValue}px)`;
-  }
-</script>
-
-<!-- CODE FOR THE SECOND SLIDER -->
-
-<style>
-  .slider-container2 {
-    width: 100%;
-    max-width: 800px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .slider2 {
-    display: flex;
-    transition: transform 0.4s ease;
-  }
-  .slide2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 100%;
-  }
-
-  .slide2 img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-
-  .slider-controls2 {
-    position: absolute;
-    top: 50%;
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-
-  .btn2 {
-    cursor: pointer;
-    line-height: 1;
-    font-size: 18px;
-    font-size: 24px;
-    border: none;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ff8a00;
-    background-color: rgba(30, 38, 53, 0.6);
-    padding: 10px;
-    border-radius: 50%;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .btn2:hover,
-  .btn2:focus {
-    background-color: rgba(30, 38, 53, 0.4);
-    color: #d27204;
-  }
-
-  .prev-btn2 {
-    position: absolute;
-    left: 20px;
-    transform: translateY(-50%);
-  }
-
-  .next-btn2 {
-    position: absolute;
-    right: 20px;
-    transform: translateY(-50%);
-  }
-</style>
-
+<!-- ========== CODE FOR THE SECOND CAROUSEL ================ -->
+<link
+  rel="stylesheet"
+  href="https://codefinity-content-media-v2.s3.eu-west-1.amazonaws.com/courses/c1087363-9025-4c37-8d5e-983a32a007e9/image-tools-section/two-images-carousels-2.css"
+/>
 <div class="slider-container2">
   <div class="slider2">
     <div class="slide2">
@@ -217,27 +64,4 @@
     <button class="btn2 next-btn2" onclick="moveToNextSlide2()">&#8594;</button>
   </div>
 </div>
-
-<script>
-  let currentSlide2 = 0;
-
-  let moveToPrevSlide2 = () => {
-    const slider = document.querySelector(".slider2");
-    currentSlide2 =
-      (currentSlide2 - 1 + slider.children.length) % slider.children.length;
-    updateSliderPosition2();
-  };
-
-  let moveToNextSlide2 = () => {
-    const slider = document.querySelector(".slider2");
-    currentSlide2 = (currentSlide2 + 1) % slider.children.length;
-    updateSliderPosition2();
-  };
-
-  function updateSliderPosition2() {
-    const slider = document.querySelector(".slider2");
-    const slideWidth = slider.children[0].clientWidth;
-    const translateXValue = -currentSlide2 * slideWidth;
-    slider.style.transform = `translateX(${translateXValue}px)`;
-  }
-</script>
+<script src="https://codefinity-content-media-v2.s3.eu-west-1.amazonaws.com/courses/c1087363-9025-4c37-8d5e-983a32a007e9/image-tools-section/two-images-carousels-2.js"></script>
